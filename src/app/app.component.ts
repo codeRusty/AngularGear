@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
 import { BeamService, coreHTTP, AppriseService, GlobalRef, LoaderService } from './common';
+import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
+import { MediaMatcher } from '@angular/cdk/layout';
+
 // Create observer object
 const myObserver = {
   next: x => console.log('Observer got a next value: ' + x.msg),
@@ -13,9 +15,6 @@ const myObserver = {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  counter: number = 1;
-  title = 'Angular Gear';
-  constructor() {
-  }
+ 
 
 }

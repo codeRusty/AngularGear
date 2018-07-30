@@ -1,0 +1,26 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+
+  .wrap-login{  
+ text-align: center;
+  }
+
+  .login-card {
+    margin-left: 35%;
+    margin-top: 10%; 
+    max-width: 400px;
+  }
+  
+  .example-header-image mat-card-title {
+    font-size: 20px;
+  }
+  
+  .mt-100{
+    margin-top: 100px !important;
+  }
