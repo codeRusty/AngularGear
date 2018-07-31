@@ -1,11 +1,10 @@
 import { Component, OnInit, NgZone } from '@angular/core';
-import { GoogleAuthService } from '../../common/lib/core/auth.service';
+import { GoogleAuthService } from '../../angular-gear';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  providers: [GoogleAuthService]
 })
 export class LoginComponent implements OnInit {
   imageURL: string;

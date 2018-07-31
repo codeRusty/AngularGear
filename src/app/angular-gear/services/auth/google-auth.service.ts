@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AppGlobals } from './app.globals';
+import { AppGlobals } from '../core/app.globals';
 import { Http } from '@angular/http';
 
 declare const gapi: any;

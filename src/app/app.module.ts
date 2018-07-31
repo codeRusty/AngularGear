@@ -3,8 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-import { coreHTTP } from './common/lib/core/coreHTTP.service';
-import { AppCommonModule } from './common/commom.module';
+import { AngularGearModule } from './angular-gear/angular-gear.module';
 import { RightBarComponent } from './components/right-bar/right-bar.component';
 import { LeftViewComponent } from './components/left-view/left-view.component';
 
@@ -57,7 +56,7 @@ import { HomeComponent } from './pages/home/home.component';
     MatCardModule,
     BrowserModule,
     HttpModule,
-    AppCommonModule,
+    AngularGearModule,
     FormsModule,
     MatButtonModule,
     MatCheckboxModule,

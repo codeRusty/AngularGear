@@ -1,4 +1,4 @@
-import { BeamService, coreHTTP, AppriseService, GlobalRef, LoaderService } from './common';
+import { BeamService, coreHTTP, AppriseService, LoaderService } from './angular-gear';
 import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 
@@ -15,6 +15,6 @@ const myObserver = {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
- 
+
 
 }

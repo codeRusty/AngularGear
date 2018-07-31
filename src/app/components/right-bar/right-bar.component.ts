@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BeamService, coreHTTP, AppriseService, GlobalRef, LoaderService } from '../../common';
+import { BeamService, coreHTTP, AppriseService, LoaderService } from '../../angular-gear';
 
 @Component({
     selector: 'right-bar',
