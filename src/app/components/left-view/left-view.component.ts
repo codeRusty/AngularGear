@@ -18,9 +18,15 @@ export class LeftViewComponent {
     title = 'Angular Gear';
 
     constructor(public _http: coreHTTP, public _beam: BeamService, private _apprise: AppriseService, private loader: LoaderService) {
-
+        this.registerEvents();
     }
-
+    registerEvents() {
+        this._beam.on().subscribe({
+            next: x => this.username = x.msg,
+            error: err => console.error('Observer got an error: ' + err),
+            complete: () => console.log('Observer got a complete notification'),
+        });
+    }
 
     emitBeam() {
         this._beam.broadcast({ msg: this.username, type: "ok" });

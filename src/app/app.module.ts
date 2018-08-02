@@ -56,7 +56,7 @@ import { HomeComponent } from './pages/home/home.component';
     MatCardModule,
     BrowserModule,
     HttpModule,
-    AngularGearModule,
+    AngularGearModule.forRoot({GOOGLE_AUTH_KEY:'903075759019-3q89hsrh5q0p8kjvk4etv9l8d6qflqro.apps.googleusercontent.com'}),
     FormsModule,
     MatButtonModule,
     MatCheckboxModule,

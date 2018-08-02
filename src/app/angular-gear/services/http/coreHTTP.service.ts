@@ -11,7 +11,7 @@ import { BootstrapOptions } from '@angular/core/src/application_ref';
 
 export enum Action { QueryStart, QueryStop };
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class coreHTTP {
 
   // To check if the base URL is Set and wether to use it or not.

@@ -12,7 +12,7 @@ function _demo(): any {
 }
 
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class BrowserWindowService {
     get nativeWindow(): any {
         return _window();

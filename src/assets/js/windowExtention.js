@@ -32,7 +32,7 @@ WindowExtention = {
 
         }, {
                 type: type[color],
-                timer: 400,
+                timer: 40000,
                 placement: {
                     from: from,
                     align: align

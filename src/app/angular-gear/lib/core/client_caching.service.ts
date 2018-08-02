@@ -6,8 +6,9 @@ import { WEB_ERRORS } from '../../constants/app.constants';
 
 export enum Action { QueryStart, QueryStop };
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class ClientCaching {
+
 
   constructor(private _http: Http) {
 

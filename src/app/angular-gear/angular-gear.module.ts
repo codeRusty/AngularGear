@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { coreHTTP } from './services/http/coreHTTP.service'
@@ -21,4 +21,20 @@ import { GoogleAuthService } from './services/auth/google-auth.service';
     //exports: [AuthenticateModule]
 })
 
-export class AngularGearModule { }
+export class AngularGearModule {
+
+    static forRoot(config: GearConfig): ModuleWithProviders {
+        // User config get logged here
+        console.log(config);
+        return {
+            ngModule: AngularGearModule,
+            providers: [coreHTTP, BeamService, BrowserWindowService, AppriseService, LoaderService, GoogleAuthService]
+        };
+    }
+}
+
+
+export interface GearConfig {
+    GOOGLE_AUTH_KEY: string,
+}
+

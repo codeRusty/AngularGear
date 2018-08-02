@@ -1,12 +1,13 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { AppGlobals } from '../core/app.globals';
 import { Http } from '@angular/http';
+import { GearConfig } from '../../angular-gear.module';
 
 declare const gapi: any;
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class GoogleAuthService {
-    constructor(private http: Http) { }
+    constructor(@Inject('GearConfig') private config: GearConfig, private http: Http) { }
 
     /**
      * Calling Google login API and fetching account details.
@@ -18,7 +19,7 @@ export class GoogleAuthService {
 
         gapi.load('auth2', function () {
             auth2 = gapi.auth2.init({
-                client_id: AppGlobals.GOOGLE_CLIENT_ID,
+                client_id: this.config.GOOGLE_AUTH_KEY,
                 cookiepolicy: 'single_host_origin',
                 scope: 'profile email'
             });
