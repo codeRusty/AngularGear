@@ -1,8 +1,17 @@
-<li [class.loader-hidden]="!show" *ngIf="show">
+<li [class.loader-hidden]="!show" *ngIf="show" [@flyInOut]="state">
   <div>
     <div>
-      <div class="notifybox animated fadeInDown" [ngStyle]="{'background-color': color}">{{message}}</div>
-      <div class="close" (click)="closethis()">X</div>
+      <div class="notifybox" [className]="notifyClass">
+        <div class="progress-loader">
+          <span></span>
+        </div>
+        <div class="nb-title">{{message}}</div>
+        <div class="nb-content">{{message}}</div>
+        <div class="close" (click)="closethis()" [innerHTML]="svg | keepHtml">
+
+        </div>
+      </div>
+
     </div>
   </div>
 </li>

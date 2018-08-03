@@ -1,3 +1,3 @@
 <ul class="notify-overlay">
-  <notify-message *ngFor="let state of states" [show]="state.show" [message]="state.message" [color]="state.color"></notify-message>
+  <notify-message *ngFor="let state of states" [show]="state.show" [message]="state.message" [notifyClass]="state.notifyClass" [state]="state.state" [svg]="state.svg"></notify-message>
 </ul>

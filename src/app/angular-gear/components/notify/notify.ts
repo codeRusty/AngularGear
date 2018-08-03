@@ -1,6 +1,8 @@
 export interface NotifyState {
-    count:number;
+    count: number;
     show: boolean;
     message: string;
-    color: string;
+    notifyClass: string;
+    state: string;
+    svg: string;
 }

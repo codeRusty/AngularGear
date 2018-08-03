@@ -19,6 +19,7 @@ export class NotifyComponent implements OnInit {
     ngOnInit() {
         this.subscription = this.loaderService.loaderState
             .subscribe((state: NotifyState) => {
+                console.log(state);
                 this.states.push(state);
                 setTimeout(() => {
                     for (var i = 0; i <= this.states.length - 1; i++) {
@@ -26,8 +27,8 @@ export class NotifyComponent implements OnInit {
                             this.states.splice(i, 1);
                         }
                     }
-                }, 5000)
-                console.log(state.show)
+                }, 2000)
+               // console.log(state.show)
             });
     }
     ngOnDestroy() {

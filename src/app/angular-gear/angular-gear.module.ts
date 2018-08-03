@@ -12,13 +12,14 @@ import { GoogleAuthService } from './services/auth/google-auth.service';
 import { NotifyComponent } from './components/notify/notify.component';
 import { NotifyService } from './components/notify/notify.service';
 import { NotifyMessageComponent } from './components/notify-message/notify-message.component';
+import { EscapeHtmlPipe } from './pipes/keep-html.pipe';
 
 // import { GlobalRef } from '../../_services/internal/client-side.globals.service';
 // import { AppriseService } from '../../_services/internal/apprise.service';
 
 @NgModule({
     imports: [CommonModule, FormsModule, HttpModule],
-    declarations: [LoaderComponent, NotifyComponent, NotifyMessageComponent],
+    declarations: [LoaderComponent, NotifyComponent, NotifyMessageComponent, EscapeHtmlPipe],
     providers: [coreHTTP, BeamService, BrowserWindowService, AppriseService, LoaderService, GoogleAuthService, NotifyService],
     exports: [LoaderComponent, NotifyComponent]
     //exports: [AuthenticateModule]

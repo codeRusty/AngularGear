@@ -1,34 +1,91 @@
 /* .loader-hidden {
   visibility: hidden;
 }
- */ 
- li{
-   padding: 2px;
- }
+ */
 
- .close{
-  position: absolute;
-  left: 47%;
-  margin-top: -4%;
+li {
+  padding: 2px;
 }
-.notifybox{
-  padding: 6px;
-  border-radius: 5px; 
+
+.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 20px;
+  line-height: 3;
+}
+
+.notifybox .progress-loader {
+  background-color: #ffcd1b;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 5px;
+}
+
+.notifybox {
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  position: relative;
+  margin-bottom: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.n-success {
+  background-color: #8BC34A;
+}
+
+.n-info {
+  background-color: #03A9F4
+}
+
+.n-warn {
+  background-color: #ffdb5b
+}
+
+.n-alert {
+  background-color: #ffdb5b
+}
+
+.n-error {
+  background-color: #F44336;
+}
+
+.notifybox .nb-title {
+  margin: 0;
+  padding: 0;
+  line-height: 30px;
+  font-size: 20px;
+}
+
+.notifybox .nb-content {
+  margin: 0;
+  font-size: 16px;
+  padding: 0 50px 0 0;
+  line-height: 20px;
 }
 
 .loader {
- 
-  position: fixed; /* Sit on top of the page content */
-  width: 24%; /* Full width (cover the whole page) */
-  height: 10%; /* Full height (cover the whole page) */
-  top: 2%; 
+  position: fixed;
+  /* Sit on top of the page content */
+  width: 24%;
+  /* Full width (cover the whole page) */
+  height: 10%;
+  /* Full height (cover the whole page) */
+  top: 2%;
   left: 76%;
   right: 0px;
   bottom: 0;
-  background-color: rgba(13, 187, 218, 0.856); /* Black background with opacity */
-  z-index: 99999; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
-
+  background-color: rgba(13, 187, 218, 0.856);
+  /* Black background with opacity */
+  z-index: 99999;
+  /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer;
+  /* Add a pointer on hover */
 }
 
 @-webkit-keyframes spin {
