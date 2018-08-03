@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BeamService, coreHTTP, AppriseService, LoaderService } from '../../angular-gear';
+import { BeamService, coreHTTP, AppriseService, LoaderService, NotifyService } from '../../angular-gear';
 // Create observer object
 const myObserver = {
     next: x => console.log('Observer got a next value: ' + x.msg),
@@ -17,7 +17,7 @@ export class LeftViewComponent {
     counter: number = 1;
     title = 'Angular Gear';
 
-    constructor(public _http: coreHTTP, public _beam: BeamService, private _apprise: AppriseService, private loader: LoaderService) {
+    constructor(public notify: NotifyService, public _http: coreHTTP, public _beam: BeamService, private _apprise: AppriseService, private loader: LoaderService) {
         this.registerEvents();
     }
     registerEvents() {
@@ -33,16 +33,20 @@ export class LeftViewComponent {
     }
 
     showWarning() {
-        this._apprise.notitfyWarning("This is Warning for your now!!");
+        // this._apprise.notitfyWarning("This is Warning for your now!!");
+        this.notify.Warning();
     }
     showInfo() {
-        this._apprise.notitfyInfo("This is Info for your now!!");
+        this.notify.Info();
+        //this._apprise.notitfyInfo("This is Info for your now!!");
     }
     showError() {
-        this._apprise.notitfyError("This is Error for your now!!");
+        this.notify.Error();
+        //this._apprise.notitfyError("This is Error for your now!!");
     }
     showSuccess() {
-        this._apprise.notitfySuccess("This is Success for your now!!");
+        //this._apprise.notitfySuccess("This is Success for your now!!");
+        this.notify.Success();
     }
 
     getHttp() {

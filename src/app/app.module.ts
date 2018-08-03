@@ -42,6 +42,7 @@ import {
 import { LoginComponent } from './pages/login/login.component';
 import { AppRoutingModule } from './app.routing.module';
 import { HomeComponent } from './pages/home/home.component';
+import { NotifyComponent } from './angular-gear/components/notify/notify.component';
 
 @NgModule({
   declarations: [

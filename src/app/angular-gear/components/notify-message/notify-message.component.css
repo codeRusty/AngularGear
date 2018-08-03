@@ -1,0 +1,50 @@
+/* .loader-hidden {
+  visibility: hidden;
+}
+ */ 
+ li{
+   padding: 2px;
+ }
+
+ .close{
+  position: absolute;
+  left: 47%;
+  margin-top: -4%;
+}
+.notifybox{
+  padding: 6px;
+  border-radius: 5px; 
+}
+
+.loader {
+ 
+  position: fixed; /* Sit on top of the page content */
+  width: 24%; /* Full width (cover the whole page) */
+  height: 10%; /* Full height (cover the whole page) */
+  top: 2%; 
+  left: 76%;
+  right: 0px;
+  bottom: 0;
+  background-color: rgba(13, 187, 218, 0.856); /* Black background with opacity */
+  z-index: 99999; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

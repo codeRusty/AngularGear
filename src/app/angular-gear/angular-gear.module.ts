@@ -9,15 +9,18 @@ import { AppriseService } from './services/apprise.service';
 import { LoaderComponent } from './components/loader/loader.component';
 import { LoaderService } from './components/loader/loader.service';
 import { GoogleAuthService } from './services/auth/google-auth.service';
+import { NotifyComponent } from './components/notify/notify.component';
+import { NotifyService } from './components/notify/notify.service';
+import { NotifyMessageComponent } from './components/notify-message/notify-message.component';
 
 // import { GlobalRef } from '../../_services/internal/client-side.globals.service';
 // import { AppriseService } from '../../_services/internal/apprise.service';
 
 @NgModule({
     imports: [CommonModule, FormsModule, HttpModule],
-    declarations: [LoaderComponent],
-    providers: [coreHTTP, BeamService, BrowserWindowService, AppriseService, LoaderService, GoogleAuthService],
-    exports: [LoaderComponent]
+    declarations: [LoaderComponent, NotifyComponent, NotifyMessageComponent],
+    providers: [coreHTTP, BeamService, BrowserWindowService, AppriseService, LoaderService, GoogleAuthService, NotifyService],
+    exports: [LoaderComponent, NotifyComponent]
     //exports: [AuthenticateModule]
 })
 
@@ -28,7 +31,7 @@ export class AngularGearModule {
         console.log(config);
         return {
             ngModule: AngularGearModule,
-            providers: [coreHTTP, BeamService, BrowserWindowService, AppriseService, LoaderService, GoogleAuthService]
+            providers: [NotifyService, coreHTTP, BeamService, BrowserWindowService, AppriseService, LoaderService, GoogleAuthService, { provide: 'config', useValue: config }]
         };
     }
 }

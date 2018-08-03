@@ -1,0 +1,8 @@
+<li [class.loader-hidden]="!show" *ngIf="show">
+  <div>
+    <div>
+      <div class="notifybox animated fadeInDown" [ngStyle]="{'background-color': color}">{{message}}</div>
+      <div class="close" (click)="closethis()">X</div>
+    </div>
+  </div>
+</li>
