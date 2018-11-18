@@ -1,68 +1,81 @@
 import { Component } from '@angular/core';
-import { BeamService, coreHTTP, AppriseService, LoaderService, NotifyService } from '../../angular-gear';
+import {
+  BeamService,
+  coreHTTP,
+  AppriseService,
+  LoaderService,
+  NotifyService
+} from '../../angular-gear';
 // Create observer object
 const myObserver = {
-    next: x => console.log('Observer got a next value: ' + x.msg),
-    error: err => console.error('Observer got an error: ' + err),
-    complete: () => console.log('Observer got a complete notification'),
+  next: x => console.log('Observer got a next value: ' + x.msg),
+  error: err => console.error('Observer got an error: ' + err),
+  complete: () => console.log('Observer got a complete notification')
 };
 
 @Component({
-    selector: 'left-view',
-    templateUrl: './left-view.component.html',
-    styleUrls: ['./left-view.component.css']
+  selector: 'left-view',
+  templateUrl: './left-view.component.html',
+  styleUrls: ['./left-view.component.css']
 })
 export class LeftViewComponent {
-    username: string = "";
-    counter: number = 1;
-    title = 'Angular Gear';
+  username = '';
+  counter = 1;
+  title = 'Angular Gear';
 
-    constructor(public notify: NotifyService, public _http: coreHTTP, public _beam: BeamService, private _apprise: AppriseService, private loader: LoaderService) {
-        this.registerEvents();
-    }
-    registerEvents() {
-        this._beam.on().subscribe({
-            next: x => this.username = x.msg,
-            error: err => console.error('Observer got an error: ' + err),
-            complete: () => console.log('Observer got a complete notification'),
-        });
-    }
+  constructor(
+    public notify: NotifyService,
+    public _http: coreHTTP,
+    public _beam: BeamService,
+    private _apprise: AppriseService,
+    private loader: LoaderService
+  ) {
+    this.registerEvents();
+  }
+  registerEvents() {
+    this._beam.on().subscribe({
+      next: x => (this.username = x.msg),
+      error: err => console.error('Observer got an error: ' + err),
+      complete: () => console.log('Observer got a complete notification')
+    });
+  }
 
-    emitBeam() {
-        this._beam.broadcast({ msg: this.username, type: "ok" });
-    }
+  emitBeam() {
+    this._beam.broadcast({ msg: this.username, type: 'ok' });
+  }
 
-    showWarning() {
-        // this._apprise.notitfyWarning("This is Warning for your now!!");
-        this.notify.Warning();
-    }
-    showInfo() {
-        this.notify.Info();
-        //this._apprise.notitfyInfo("This is Info for your now!!");
-    }
-    showError() {
-        this.notify.Error();
-        //this._apprise.notitfyError("This is Error for your now!!");
-    }
-    showSuccess() {
-        //this._apprise.notitfySuccess("This is Success for your now!!");
-        this.notify.Success();
-    }
+  showWarning() {
+    // this._apprise.notitfyWarning("This is Warning for your now!!");
+    this.notify.Warning();
+  }
+  showInfo() {
+    this.notify.Info();
+    // this._apprise.notitfyInfo("This is Info for your now!!");
+  }
+  showError() {
+    this.notify.Error();
+    // this._apprise.notitfyError("This is Error for your now!!");
+  }
+  showSuccess() {
+    // this._apprise.notitfySuccess("This is Success for your now!!");
+    this.notify.Success();
+  }
 
-    getHttp() {
-        this._http.get('https://jsonplaceholder.typicode.com/posts/1').subscribe(res => { setTimeout(this.loader.hide(), 2000) });
+  getHttp() {
+    this._http
+      .get('https://jsonplaceholder.typicode.com/posts/1')
+      .subscribe(res => {
+        setTimeout(this.loader.hide(), 2000);
+      });
+  }
 
-    }
+  // Show Loader
+  showLoader() {
+    this.loader.show();
+    this.getHttp();
+  }
 
-    //Show Loader
-    showLoader() {
-        this.loader.show();
-        this.getHttp();
-    }
+  hideLoader() {}
 
-    hideLoader() {
-
-    }
-
-    //Show Loader
+  // Show Loader
 }

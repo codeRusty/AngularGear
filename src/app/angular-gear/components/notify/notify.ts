@@ -5,4 +5,5 @@ export interface NotifyState {
     notifyClass: string;
     state: string;
     svg: string;
+    position: string;
 }

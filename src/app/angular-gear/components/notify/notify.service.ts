@@ -42,19 +42,19 @@ export class NotifyService {
     constructor() { }
 
     Error() {
-        this.loaderSubject.next(<NotifyState>{ show: true, message: "Error", notifyClass: '#F44336', count: this.count, state: 'active', svg: error_alert });
+        this.loaderSubject.next(<NotifyState>{ position: 'top-right', show: true, message: "Error", notifyClass: '#F44336', count: this.count, state: 'active', svg: error_alert });
         this.count++;
     }
     Success() {
-        this.loaderSubject.next(<NotifyState>{ show: true, message: "Success", notifyClass: 'notifybox n-success', count: this.count, state: 'active', svg: success_tick });
+        this.loaderSubject.next(<NotifyState>{ position: 'bottom-right', show: true, message: "Success", notifyClass: 'notifybox n-success', count: this.count, state: 'active', svg: success_tick });
         this.count++;
     }
     Warning() {
-        this.loaderSubject.next(<NotifyState>{ show: true, message: "Warning", notifyClass: 'notifybox n-warn', count: this.count, state: 'active', svg: warning_bell });
+        this.loaderSubject.next(<NotifyState>{ position: 'top-left', show: true, message: "Warning", notifyClass: 'notifybox n-warn', count: this.count, state: 'active', svg: warning_bell });
         this.count++;
     }
     Info() {
-        this.loaderSubject.next(<NotifyState>{ show: true, message: "Info", notifyClass: 'notifybox n-info', count: this.count, state: 'active', svg: info_mark });
+        this.loaderSubject.next(<NotifyState>{ position: 'top-right', show: true, message: "Info", notifyClass: 'notifybox n-info', count: this.count, state: 'active', svg: info_mark });
         this.count++;
     }
     JustNotify() {

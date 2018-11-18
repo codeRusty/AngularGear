@@ -27,7 +27,7 @@ export class NotifyComponent implements OnInit {
                             this.states.splice(i, 1);
                         }
                     }
-                }, 2000)
+                }, 5000)
                // console.log(state.show)
             });
     }

@@ -4,11 +4,32 @@
   position: fixed; /* Sit on top of the page content */
   width: 350px; /* Full width (cover the whole page) */
   height: 12%; /* Full height (cover the whole page) */
-  top: 10px;
-  right: 10px;
+ 
   z-index: 99999; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
 }
+
+.top-right{
+  top: 70px;
+  right: 10px;
+}
+
+.top-left{
+  top: 10px;
+  left: 10px;
+}
+
+.bottom-right{
+  bottom: 10px;
+  right: 10px;
+}
+
+.bottom-left{
+  bottom: 10px;
+  left: 10px;
+}
+
+
 ul {
   list-style-type: none;
 }

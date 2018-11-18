@@ -7,23 +7,20 @@ import { trigger, state, style, transition, animate } from '../../../../../node_
     styleUrls: ['notify-message.component.css'],
     animations: [
         trigger('flyInOut', [
-            state('inactive', style({ transform: 'translateX(0) scale(0)' })),
-            state('active', style({ transform: 'translateX(0) scale(1)' })),
-            transition('inactive => active', animate('100ms ease-in')),
-            transition('active => inactive', animate('100ms ease-out')),
-            transition('void => inactive', [
-                style({ transform: 'translateX(-100%) scale(1)' }),
-                animate(100)
+            state('active', style({ opacity: 1, transform: 'translateX(0)' })),
+            state('inactive', style({ opacity: 1, transform: 'translateX(110%)' })),
+            transition('void => *', [
+                style({
+                    opacity: 0,
+                    transform: 'scale3d(.3, .3, .3)'
+                }),
+                animate('0.2s ease-in')
             ]),
-            transition('inactive => void', [
-                animate(100, style({ transform: 'translateX(100%) scale(1)' }))
-            ]),
-            transition('void => active', [
-                style({ transform: 'translateX(0) scale(0)' }),
-                animate(200)
-            ]),
-            transition('active => void', [
-                animate(200, style({ transform: 'translateX(0) scale(0)' }))
+            transition('* => void', [
+                animate('0.2s 0.1s ease-out', style({
+                    opacity: 0,
+                    transform: 'translateX(110%)'
+                }))
             ])
         ])
     ]
@@ -34,8 +31,8 @@ export class NotifyMessageComponent implements OnInit {
 
     @Output()
     closeEvent: EventEmitter<string>;
-    
-    
+
+
     @Input('state')
     state: string;
 
@@ -59,6 +56,11 @@ export class NotifyMessageComponent implements OnInit {
         // setTimeout(() => { this.show = false }, 3000);
         //this.state = 'active';
         console.log(this.svg);
+        setTimeout(() => {
+            console.log(this.state);
+            //this.state = 'inactive'
+
+        }, 4999)
     }
 
     ngOnInit() {
@@ -67,7 +69,7 @@ export class NotifyMessageComponent implements OnInit {
     }
     closethis() {
         this.state = 'inactive';
-       // this.closeEvent.emit('close');
+        // this.closeEvent.emit('close');
         //this.show = false;
     }
     ngOnDestroy() {
