@@ -42,7 +42,6 @@ import {
 import { LoginComponent } from './pages/login/login.component';
 import { AppRoutingModule } from './app.routing.module';
 import { HomeComponent } from './pages/home/home.component';
-import { NotifyComponent } from './angular-gear/components/notify/notify.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +56,7 @@ import { NotifyComponent } from './angular-gear/components/notify/notify.compone
     MatCardModule,
     BrowserModule,
     HttpModule,
-    AngularGearModule.forRoot({GOOGLE_AUTH_KEY:'903075759019-3q89hsrh5q0p8kjvk4etv9l8d6qflqro.apps.googleusercontent.com'}),
+    AngularGearModule.forRoot({GOOGLE_AUTH_KEY: '903075759019-3q89hsrh5q0p8kjvk4etv9l8d6qflqro.apps.googleusercontent.com'}),
     FormsModule,
     MatButtonModule,
     MatCheckboxModule,

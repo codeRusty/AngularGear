@@ -41,24 +41,24 @@ export class NotifyService {
 
     constructor() { }
 
-    Error() {
-        this.loaderSubject.next(<NotifyState>{ position: 'top-right', show: true, message: "Error", notifyClass: '#F44336', count: this.count, state: 'active', svg: error_alert });
+    Error(message: string) {
+        this.loaderSubject.next(<NotifyState>{ position: 'top-right', show: true, message: message, notifyClass: 'notifybox n-error', count: this.count, state: 'active', svg: error_alert });
         this.count++;
     }
-    Success() {
-        this.loaderSubject.next(<NotifyState>{ position: 'bottom-right', show: true, message: "Success", notifyClass: 'notifybox n-success', count: this.count, state: 'active', svg: success_tick });
+    Success(message: string) {
+        this.loaderSubject.next(<NotifyState>{ position: 'bottom-right', show: true, message: message, notifyClass: 'notifybox n-success', count: this.count, state: 'active', svg: success_tick });
         this.count++;
     }
-    Warning() {
-        this.loaderSubject.next(<NotifyState>{ position: 'top-left', show: true, message: "Warning", notifyClass: 'notifybox n-warn', count: this.count, state: 'active', svg: warning_bell });
+    Warning(message: string) {
+        this.loaderSubject.next(<NotifyState>{ position: 'top-left', show: true, message:message, notifyClass: 'notifybox n-warn', count: this.count, state: 'active', svg: warning_bell });
         this.count++;
     }
-    Info() {
-        this.loaderSubject.next(<NotifyState>{ position: 'top-right', show: true, message: "Info", notifyClass: 'notifybox n-info', count: this.count, state: 'active', svg: info_mark });
+    Info(message: string) {
+        this.loaderSubject.next(<NotifyState>{ position: 'top-right', show: true, message: message, notifyClass: 'notifybox n-info', count: this.count, state: 'active', svg: info_mark });
         this.count++;
     }
-    JustNotify() {
-        this.loaderSubject.next(<NotifyState>{ show: true, message: "Info", notifyClass: '#ffdb5b', count: this.count, state: 'active', svg: info_mark });
+    JustNotify(message: string) {
+        this.loaderSubject.next(<NotifyState>{ show: true, message: message, notifyClass: '#ffdb5b', count: this.count, state: 'active', svg: info_mark });
         this.count++;
     }
 }

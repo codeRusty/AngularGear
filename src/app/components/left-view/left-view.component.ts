@@ -46,19 +46,19 @@ export class LeftViewComponent {
 
   showWarning() {
     // this._apprise.notitfyWarning("This is Warning for your now!!");
-    this.notify.Warning();
+    this.notify.Warning("This is Warning for your now!!");
   }
   showInfo() {
-    this.notify.Info();
+    this.notify.Info("This is Info for your now!!");
     // this._apprise.notitfyInfo("This is Info for your now!!");
   }
   showError() {
-    this.notify.Error();
+    this.notify.Error("This is Error for your now!!");
     // this._apprise.notitfyError("This is Error for your now!!");
   }
   showSuccess() {
     // this._apprise.notitfySuccess("This is Success for your now!!");
-    this.notify.Success();
+    this.notify.Success("This is Success for your now!!");
   }
 
   getHttp() {

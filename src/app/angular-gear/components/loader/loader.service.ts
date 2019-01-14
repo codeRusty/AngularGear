@@ -10,10 +10,10 @@ export class LoaderService {
 
     constructor() { }
 
-    show() {
+    show(): any {
         this.loaderSubject.next(<LoaderState>{ show: true });
     }
-    hide() {
+    hide(): any {
         this.loaderSubject.next(<LoaderState>{ show: false });
     }
 }

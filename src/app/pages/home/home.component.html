@@ -1,9 +1,15 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
   <mat-toolbar color="primary" class="example-toolbar">
+    <mat-toolbar-row>
     <button mat-icon-button (click)="snav.toggle()">
       <mat-icon>menu</mat-icon>
+
     </button>
     <h1 class="example-app-name">Responsive App</h1>
+    <span class="example-spacer"></span>
+      <mat-icon class="example-icon">favorite</mat-icon>
+      <mat-icon class="example-icon">delete</mat-icon>
+  </mat-toolbar-row>
   </mat-toolbar>
 
   <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
